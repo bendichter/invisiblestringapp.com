@@ -8,8 +8,11 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
         :root {
-            --pink: #ec4899;
-            --purple: #a855f7;
+            --raspberry: #dd2d4a;
+            --bubblegum: #f26a8d;
+            --crushed-berry: #880d1e;
+            --pink-mist: #f49cbb;
+            --light-cyan: #87DEEA;
             --dark: #1f2937;
         }
 
@@ -54,7 +57,7 @@
         .logo-text {
             font-size: 1.25rem;
             font-weight: 700;
-            background: linear-gradient(135deg, var(--pink), var(--purple));
+            background: linear-gradient(135deg, var(--raspberry), var(--bubblegum));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -67,7 +70,7 @@
         h1 {
             font-size: 2.5rem;
             margin-bottom: 8px;
-            background: linear-gradient(135deg, var(--pink), var(--purple));
+            background: linear-gradient(135deg, var(--raspberry), var(--bubblegum));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -123,7 +126,7 @@
         }
 
         footer a {
-            color: var(--pink);
+            color: var(--raspberry);
             text-decoration: none;
         }
 
@@ -145,8 +148,8 @@
                 <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#ec4899"/>
-                            <stop offset="100%" style="stop-color:#a855f7"/>
+                            <stop offset="0%" style="stop-color:#dd2d4a"/>
+                            <stop offset="100%" style="stop-color:#f26a8d"/>
                         </linearGradient>
                     </defs>
                     <path d="M50 88C50 88 15 60 15 38C15 24 26 15 38 15C44 15 50 20 50 20C50 20 56 15 62 15C74 15 85 24 85 38C85 60 50 88 50 88Z" fill="url(#heartGradient)"/>
@@ -160,7 +163,7 @@
     <main>
         <div class="container">
             <h1>Terms of Service</h1>
-            <p class="last-updated">Last Updated: January 16, 2025</p>
+            <p class="last-updated">Last Updated: January 21, 2025</p>
 
             <div class="content">
                 <h2>1. Agreement to Terms</h2>
@@ -169,39 +172,61 @@
                 <h2>2. Description of Service</h2>
                 <p>Invisible String is a mobile application that helps couples discover moments when they may have been in the same place before they met. The App:</p>
                 <ul>
-                    <li>Scans photo metadata from your device's photo library (with your permission)</li>
-                    <li>Allows you to securely share location data with a connected partner</li>
-                    <li>Identifies potential "near-miss" encounters based on photo locations and timestamps</li>
-                    <li>Generates shareable story images based on these encounters</li>
+                    <li>Scans photo metadata (location and timestamp) from your device's photo library (with your permission)</li>
+                    <li>Allows you to securely share location data with a connected partner via nearby connection (Bluetooth/WiFi) or invite code</li>
+                    <li>Identifies potential "near-miss" encounters in three categories:
+                        <ul>
+                            <li><strong>Chance Encounters:</strong> Times you were in the same place on the same day</li>
+                            <li><strong>Closest Distance:</strong> Your nearest moments ever, regardless of time</li>
+                            <li><strong>Closest in Time:</strong> Synchronized moments, regardless of distance</li>
+                        </ul>
+                    </li>
+                    <li>Presents results in an interactive story format with shareable images</li>
                 </ul>
 
                 <h2>3. Eligibility</h2>
                 <p>You must be at least 13 years old to use the App. By using the App, you represent and warrant that you meet this age requirement.</p>
 
                 <h2>4. User Accounts and Pairing</h2>
+                <p>The App does not require account creation. Pairing with your partner can be done via:</p>
                 <ul>
-                    <li>You may connect with one partner at a time through the App's pairing feature</li>
-                    <li>You are responsible for maintaining the security of your pairing codes and connections</li>
-                    <li>You agree to share data only with individuals who have consented to receive it</li>
+                    <li><strong>Nearby Connection:</strong> Direct device-to-device transfer using Bluetooth and WiFi (no data passes through servers)</li>
+                    <li><strong>Invite Code:</strong> A 6-character code that allows encrypted data transfer through Apple's iCloud (CloudKit) with automatic 24-hour expiration</li>
+                </ul>
+                <p>You agree to:</p>
+                <ul>
+                    <li>Connect with only one partner at a time</li>
+                    <li>Maintain the security of your pairing codes and connections</li>
+                    <li>Share data only with individuals who have consented to receive it</li>
                 </ul>
 
                 <h2>5. Privacy and Data</h2>
                 <p>Your privacy is important to us. Please review our <a href="privacy.html">Privacy Policy</a>, which explains how we collect, use, and protect your information.</p>
                 <p><strong>Key points:</strong></p>
                 <ul>
-                    <li>Photo scanning occurs entirely on your device</li>
-                    <li>Location data shared between partners is encrypted</li>
-                    <li>We do not store your photos or location data on our servers</li>
+                    <li>Photo scanning and matching occurs entirely on your device</li>
+                    <li>Your photos never leave your device—only extracted location metadata is used</li>
+                    <li>Location data shared between partners is end-to-end encrypted using ChaChaPoly encryption</li>
+                    <li>When using invite code pairing, encrypted data is temporarily stored in Apple's iCloud (CloudKit) for up to 24 hours, then automatically deleted</li>
+                    <li>When using nearby pairing, data transfers directly between devices with no cloud involvement</li>
+                    <li>We use TelemetryDeck for anonymous usage analytics (no personal data is collected)</li>
                     <li>You can delete all your data at any time through the App's settings</li>
                 </ul>
 
                 <h2>6. In-App Purchases</h2>
-                <p>The App may offer in-app purchases to unlock certain features (such as viewing your full story results).</p>
+                <p>The App offers optional in-app purchases:</p>
                 <ul>
+                    <li><strong>Story Unlock:</strong> Unlocks your near-miss results. The App shows a preview for free, and this one-time purchase reveals up to 5 moments per category.</li>
+                    <li><strong>Expansion Pack:</strong> Increases the number of results shown per category from 5 to 15, allowing you to see even more near-miss moments.</li>
+                </ul>
+                <p>Purchase terms:</p>
+                <ul>
+                    <li>All purchases are one-time, non-consumable purchases (buy once, keep forever)</li>
                     <li>All purchases are processed through the Apple App Store</li>
                     <li>Prices are displayed in your local currency before purchase</li>
                     <li>Purchases are non-refundable except as required by applicable law or Apple's refund policies</li>
-                    <li>You may restore previous purchases on the same Apple ID</li>
+                    <li>You may restore previous purchases on the same Apple ID through the Settings menu</li>
+                    <li>The Expansion Pack can be enabled or disabled at any time in Settings after purchase</li>
                 </ul>
 
                 <h2>7. Acceptable Use</h2>
