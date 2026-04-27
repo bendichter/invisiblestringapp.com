@@ -831,6 +831,126 @@
             font-size: 0.95rem;
         }
 
+        /* ─── Testimonials ─── */
+        .testimonials {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .testimonials-eyebrow {
+            display: block;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--coral);
+            margin-bottom: 14px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 24px;
+            padding: 44px 48px;
+            max-width: 720px;
+            margin: 40px auto 0;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .testimonial-card.revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--coral), var(--bubblegum), var(--pink-mist));
+        }
+
+        .testimonial-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+
+        .testimonial-stars {
+            color: #F5A623;
+            font-size: 1.15rem;
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        .testimonial-meta {
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .testimonial-meta strong {
+            display: block;
+            font-weight: 500;
+            color: var(--dark);
+            opacity: 0.75;
+        }
+
+        .testimonial-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            line-height: 1.3;
+            margin-bottom: 18px;
+            color: var(--dark);
+        }
+
+        .testimonial-card blockquote {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .testimonial-source {
+            display: block;
+            text-align: center;
+            margin-top: 24px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            opacity: 0.8;
+        }
+
+        @media (max-width: 480px) {
+            .testimonial-card {
+                padding: 32px 24px;
+            }
+
+            .testimonial-card h3 {
+                font-size: 1.25rem;
+            }
+        }
+
         /* ─── Privacy ─── */
         .privacy-highlight {
             padding: 80px 0;
@@ -1258,6 +1378,25 @@
                             <p>Create and share beautiful story cards of your invisible string.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <span class="testimonials-eyebrow">Loved on the App Store</span>
+                <h2>What people are saying</h2>
+                <div class="testimonial-card" data-reveal>
+                    <div class="testimonial-header">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="testimonial-meta">
+                            <strong>Anonymous</strong>
+                            Mar 31
+                        </div>
+                    </div>
+                    <h3>All the coincidences you might otherwise never know about!</h3>
+                    <blockquote>This app is such a great idea and fun experience. There are so many stories we forget to tell when getting to know someone and this really bridges the gap for those &ldquo;oh, you&rsquo;ve been there too?!&rdquo; conversations. Also loved the feature to view photos taken at the same time; was very cool to see back three years before we&rsquo;d met that while I was trying a new recipe, they were at a museum, or that we both took a photo of the same sunset just 500 miles apart. Would recommend this app!</blockquote>
+                    <span class="testimonial-source">App Store review</span>
                 </div>
             </div>
         </section>
