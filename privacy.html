@@ -193,7 +193,7 @@
     <main>
         <div class="container">
             <h1>Privacy Policy</h1>
-            <p class="last-updated">Last Updated: January 22, 2025</p>
+            <p class="last-updated">Last Updated: April 27, 2026</p>
 
             <div class="content">
                 <h2>Introduction</h2>
@@ -224,7 +224,6 @@
                     <li>Photo location coordinates (latitude/longitude)</li>
                     <li>Photo timestamps</li>
                     <li>Your name</li>
-                    <li>Thumbnail images of photos at matched locations</li>
                 </ul>
 
                 <h2>How We Use Your Information</h2>
@@ -254,9 +253,9 @@
                 <h3>Partner Data Transfer</h3>
                 <ul>
                     <li>We do not operate our own servers or databases</li>
-                    <li><strong>On iOS:</strong> When using invite code pairing, encrypted data is temporarily stored in Apple's iCloud (CloudKit) for up to 24 hours, then automatically deleted. When using nearby pairing, data transfers directly between devices with no cloud involvement.</li>
-                    <li><strong>On Android:</strong> You export your data as a file and share it directly with your partner using your preferred method (email, messaging apps, AirDrop, etc.). No data passes through our servers—you control how and when the file is transferred.</li>
-                    <li>No permanent records of your data exist outside your device</li>
+                    <li><strong>Invite Code Pairing (iOS and Android):</strong> When you pair using a 6-character invite code, your end-to-end encrypted data is temporarily stored in Google Firebase (Cloud Firestore and/or Cloud Storage) for up to 48 hours, then automatically deleted. The data is encrypted on your device before upload, and only your partner's device—using the invite code—can decrypt it. We cannot read its contents.</li>
+                    <li><strong>Nearby Pairing (iOS):</strong> Data transfers directly between devices over Bluetooth/Wi-Fi with no cloud involvement.</li>
+                    <li>No permanent records of your data exist outside your device or your partner's device</li>
                 </ul>
 
                 <h2>Data Sharing</h2>
@@ -265,7 +264,7 @@
                     <li>Sell your personal information</li>
                     <li>Share your data with advertisers</li>
                     <li>Use your photos for any purpose other than metadata extraction</li>
-                    <li>Store your data on external servers</li>
+                    <li>Store your unencrypted data on any server (encrypted invite-code data is held briefly on Firebase, then auto-deleted within 48 hours)</li>
                     <li>Access your data without your explicit action</li>
                 </ul>
 
@@ -283,7 +282,6 @@
                     <li><strong>App Store:</strong> Handles app distribution and payment processing</li>
                     <li><strong>StoreKit:</strong> Manages in-app purchases</li>
                     <li><strong>Photos Framework:</strong> Provides access to photo metadata (with your permission)</li>
-                    <li><strong>CloudKit:</strong> Used for temporary data transfer when pairing via invite code. Encrypted data is automatically deleted after 24 hours.</li>
                     <li><strong>MapKit:</strong> Displays maps and converts coordinates to place names</li>
                 </ul>
 
@@ -294,6 +292,16 @@
                     <li><strong>MediaStore:</strong> Provides access to photo metadata (with your permission)</li>
                     <li><strong>Google Maps SDK:</strong> Displays maps and converts coordinates to place names</li>
                 </ul>
+
+                <h3>Google Firebase (Both Platforms)</h3>
+                <p>We use <strong>Google Firebase</strong> to relay end-to-end encrypted data between paired partners when you use invite code pairing. Specifically:</p>
+                <ul>
+                    <li>Encrypted data is uploaded to Cloud Firestore and/or Cloud Storage for Firebase, keyed by your one-time invite code</li>
+                    <li>Data is encrypted on your device before it reaches Firebase—Google and Invisible String cannot read its contents</li>
+                    <li>Encrypted records are automatically deleted within 48 hours</li>
+                    <li>Firebase may also be used for anonymous crash diagnostics on Android (Firebase Crashlytics) to help us fix bugs</li>
+                </ul>
+                <p>Firebase is operated by Google LLC. Data may be processed on Google Cloud infrastructure outside your country of residence. See <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase's Privacy and Security</a> page for more information.</p>
 
                 <h3>Analytics (Both Platforms)</h3>
                 <p>We use <strong>TelemetryDeck</strong>, a privacy-focused analytics service, to understand how the app is used. TelemetryDeck collects anonymous usage events (such as "scan started" or "story viewed") without any personal information, device identifiers, or tracking across apps. No advertising networks or data brokers receive your information.</p>
@@ -321,8 +329,9 @@
                 <h2>Data Retention</h2>
                 <ul>
                     <li><strong>Local Data:</strong> Stored on your device until you delete it or uninstall the App</li>
-                    <li><strong>Shared Data:</strong> Exists only on your device and your partner's device</li>
-                    <li><strong>Server Data:</strong> We do not retain any personal data on servers</li>
+                    <li><strong>Shared Data:</strong> Exists on your device and your partner's device</li>
+                    <li><strong>Pairing Relay (Firebase):</strong> End-to-end encrypted invite-code data is automatically deleted within 48 hours</li>
+                    <li><strong>Server Data:</strong> We do not retain any unencrypted personal data on any server</li>
                 </ul>
 
                 <h2>Security Measures</h2>
@@ -352,7 +361,7 @@
                 <p>Since we process data locally and don't maintain databases of user information, most CCPA requests are satisfied by the App's built-in data deletion features.</p>
 
                 <h2>International Users</h2>
-                <p>The App processes data locally on your device regardless of your location. No data is transferred internationally through our services.</p>
+                <p>The App processes your photo metadata locally on your device regardless of your location. When you use invite code pairing, your end-to-end encrypted partner data is briefly relayed through Google Firebase, which may store it on Google Cloud infrastructure outside your country of residence before automatic deletion within 48 hours. Because the data is encrypted on your device before upload, neither Google nor Invisible String can read it.</p>
 
                 <h2>Summary</h2>
                 <table>
@@ -374,19 +383,19 @@
                         <tr>
                             <td>Photo Locations</td>
                             <td>Yes (on device)</td>
-                            <td>No</td>
+                            <td>Encrypted relay only (Firebase, &lt;48h)</td>
                             <td>With partner only</td>
                         </tr>
                         <tr>
                             <td>Photo Timestamps</td>
                             <td>Yes (on device)</td>
-                            <td>No</td>
+                            <td>Encrypted relay only (Firebase, &lt;48h)</td>
                             <td>With partner only</td>
                         </tr>
                         <tr>
                             <td>Your Name</td>
                             <td>Yes</td>
-                            <td>No</td>
+                            <td>Encrypted relay only (Firebase, &lt;48h)</td>
                             <td>With partner only</td>
                         </tr>
                         <tr>

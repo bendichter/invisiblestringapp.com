@@ -93,10 +93,38 @@
             margin-top: 32px;
             margin-bottom: 12px;
             color: var(--dark);
+            scroll-margin-top: 20px;
         }
 
         h2:first-child {
             margin-top: 0;
+        }
+
+        .anchor {
+            margin-left: 8px;
+            color: var(--bubblegum);
+            text-decoration: none;
+            font-weight: 400;
+            opacity: 0;
+            transition: opacity 0.15s ease;
+        }
+
+        h2:hover .anchor,
+        .anchor:focus {
+            opacity: 1;
+        }
+
+        h2:target {
+            background: linear-gradient(90deg, rgba(244, 156, 187, 0.25), transparent);
+            border-radius: 6px;
+            padding: 4px 8px;
+            margin-left: -8px;
+        }
+
+        @media (hover: none) {
+            .anchor {
+                opacity: 0.5;
+            }
         }
 
         p {
@@ -163,13 +191,13 @@
     <main>
         <div class="container">
             <h1>Terms of Service</h1>
-            <p class="last-updated">Last Updated: January 21, 2025</p>
+            <p class="last-updated">Last Updated: April 27, 2026</p>
 
             <div class="content">
-                <h2>1. Agreement to Terms</h2>
+                <h2 id="agreement-to-terms">1. Agreement to Terms<a class="anchor" href="#agreement-to-terms" aria-label="Link to this section">#</a></h2>
                 <p>By downloading, installing, or using the Invisible String mobile application ("App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.</p>
 
-                <h2>2. Description of Service</h2>
+                <h2 id="description-of-service">2. Description of Service<a class="anchor" href="#description-of-service" aria-label="Link to this section">#</a></h2>
                 <p>Invisible String is a mobile application that helps couples discover moments when they may have been in the same place before they met. The App:</p>
                 <ul>
                     <li>Scans photo metadata (location and timestamp) from your device's photo library (with your permission)</li>
@@ -185,14 +213,14 @@
                     <li>The App is intended for couples who mutually consent to share location history with each other for entertainment purposes. It is not designed for, and must not be used for, surveillance, stalking, or sharing another person's data without their full knowledge and consent.</li>
                 </ul>
 
-                <h2>3. Eligibility</h2>
+                <h2 id="eligibility">3. Eligibility<a class="anchor" href="#eligibility" aria-label="Link to this section">#</a></h2>
                 <p>You must be at least 13 years old to use the App. The App is not directed to children under 13, and we do not knowingly collect personal information from children under 13. If you become aware that a child under 13 has used the App, please contact us.</p>
 
-                <h2>4. User Accounts and Pairing</h2>
+                <h2 id="user-accounts-and-pairing">4. User Accounts and Pairing<a class="anchor" href="#user-accounts-and-pairing" aria-label="Link to this section">#</a></h2>
                 <p>The App does not require account creation. Pairing with your partner can be done via:</p>
                 <ul>
                     <li><strong>Nearby Connection:</strong> Direct device-to-device transfer using Bluetooth and WiFi (no data passes through servers)</li>
-                    <li><strong>Invite Code:</strong> A 6-character code that allows encrypted data transfer through Apple's iCloud (CloudKit) with automatic 24-hour expiration</li>
+                    <li><strong>Invite Code:</strong> A 6-character code that allows end-to-end encrypted data transfer through Google Firebase, with automatic 48-hour expiration. Available on both iOS and Android.</li>
                 </ul>
                 <p>You agree to:</p>
                 <ul>
@@ -201,20 +229,20 @@
                     <li>Share data only with a partner who has freely and knowingly consented both to receive your data and to share their own. You confirm that any photos on your device whose metadata you process through the App are your own or were taken with the consent of those involved.</li>
                 </ul>
 
-                <h2>5. Privacy and Data</h2>
+                <h2 id="privacy-and-data">5. Privacy and Data<a class="anchor" href="#privacy-and-data" aria-label="Link to this section">#</a></h2>
                 <p>Your privacy is important to us. Please review our <a href="privacy.html">Privacy Policy</a>, which explains how we collect, use, and protect your information.</p>
                 <p><strong>Key points:</strong></p>
                 <ul>
                     <li>Photo scanning and matching occurs entirely on your device</li>
                     <li>Your photos never leave your device—only extracted location metadata is used</li>
                     <li>Location data shared between partners is end-to-end encrypted using ChaChaPoly encryption</li>
-                    <li>When using invite code pairing, encrypted data is temporarily stored in Apple's iCloud (CloudKit) for up to 24 hours, then automatically deleted</li>
-                    <li>When using nearby pairing, data transfers directly between devices with no cloud involvement</li>
+                    <li>When using invite code pairing, end-to-end encrypted data is temporarily stored in Google Firebase for up to 48 hours, then automatically deleted</li>
+                    <li>When using nearby pairing (iOS), data transfers directly between devices with no cloud involvement</li>
                     <li>We use TelemetryDeck for anonymous usage analytics (no personal data is collected)</li>
                     <li>You can delete all your data at any time through the App's settings</li>
                 </ul>
 
-                <h2>6. In-App Purchases</h2>
+                <h2 id="in-app-purchases">6. In-App Purchases<a class="anchor" href="#in-app-purchases" aria-label="Link to this section">#</a></h2>
                 <p>The App offers optional in-app purchases:</p>
                 <ul>
                     <li><strong>Story Unlock:</strong> Unlocks your near-miss results. The App shows a preview for free, and this one-time purchase reveals up to 5 moments per category.</li>
@@ -230,7 +258,7 @@
                     <li>The Expansion Pack can be enabled or disabled at any time in Settings after purchase</li>
                 </ul>
 
-                <h2>7. Acceptable Use</h2>
+                <h2 id="acceptable-use">7. Acceptable Use<a class="anchor" href="#acceptable-use" aria-label="Link to this section">#</a></h2>
                 <p>You agree NOT to:</p>
                 <ul>
                     <li>Use the App for any unlawful purpose</li>
@@ -245,18 +273,18 @@
                     <li>Use automated systems to access or interact with the App</li>
                 </ul>
 
-                <h2>8. Intellectual Property</h2>
+                <h2 id="intellectual-property">8. Intellectual Property<a class="anchor" href="#intellectual-property" aria-label="Link to this section">#</a></h2>
                 <p>The App and its original content, features, and functionality are owned by us and are protected by international copyright, trademark, and other intellectual property laws.</p>
                 <p>You retain ownership of your photos and personal data. By using the App, you grant us a limited license to process your data solely for the purpose of providing the App's functionality.</p>
 
-                <h2>9. User-Generated Content</h2>
+                <h2 id="user-generated-content">9. User-Generated Content<a class="anchor" href="#user-generated-content" aria-label="Link to this section">#</a></h2>
                 <p>Story images and other content you create using the App are yours to share as you wish. However:</p>
                 <ul>
                     <li>You are responsible for any content you share publicly</li>
                     <li>You agree not to create or share content that is illegal, harmful, or infringes on others' rights</li>
                 </ul>
 
-                <h2>10. Disclaimer of Warranties</h2>
+                <h2 id="disclaimer-of-warranties">10. Disclaimer of Warranties<a class="anchor" href="#disclaimer-of-warranties" aria-label="Link to this section">#</a></h2>
                 <p>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</p>
                 <p>We do not guarantee that:</p>
                 <ul>
@@ -267,11 +295,11 @@
                 <p>The App is intended for entertainment purposes. Near-miss results are based on photo metadata and may not reflect actual encounters.</p>
                 <p>Near-miss results are inferences based on photo metadata that may be inaccurate, missing, or misleading. Results should not be relied upon for any purpose other than entertainment, and should not be treated as evidence of any person's actual whereabouts at any time.</p>
 
-                <h2>11. Limitation of Liability</h2>
+                <h2 id="limitation-of-liability">11. Limitation of Liability<a class="anchor" href="#limitation-of-liability" aria-label="Link to this section">#</a></h2>
                 <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF DATA, PROFITS, OR GOODWILL, ARISING OUT OF YOUR USE OF THE APP.</p>
                 <p>Our total liability for any claim arising from your use of the App shall not exceed the amount you paid for in-app purchases in the twelve (12) months preceding the claim, or $50, whichever is greater.</p>
 
-                <h2>12. Indemnification</h2>
+                <h2 id="indemnification">12. Indemnification<a class="anchor" href="#indemnification" aria-label="Link to this section">#</a></h2>
                 <p>You agree to indemnify and hold us harmless from any claims, damages, losses, or expenses (including reasonable attorneys' fees) arising from:</p>
                 <ul>
                     <li>Your use of the App</li>
@@ -279,7 +307,7 @@
                     <li>Your violation of any rights of another person or entity</li>
                 </ul>
 
-                <h2>13. Changes to Terms</h2>
+                <h2 id="changes-to-terms">13. Changes to Terms<a class="anchor" href="#changes-to-terms" aria-label="Link to this section">#</a></h2>
                 <p>We may update these Terms from time to time. We will notify you of any material changes by:</p>
                 <ul>
                     <li>Posting the new Terms in the App</li>
@@ -287,7 +315,7 @@
                 </ul>
                 <p>Your continued use of the App after changes become effective constitutes acceptance of the revised Terms.</p>
 
-                <h2>14. Termination</h2>
+                <h2 id="termination">14. Termination<a class="anchor" href="#termination" aria-label="Link to this section">#</a></h2>
                 <p>We may terminate or suspend your access to the App at any time, without prior notice, for conduct that we believe:</p>
                 <ul>
                     <li>Violates these Terms</li>
@@ -296,20 +324,20 @@
                 </ul>
                 <p>You may stop using the App at any time by deleting it from your device.</p>
 
-                <h2>15. Governing Law</h2>
+                <h2 id="governing-law">15. Governing Law<a class="anchor" href="#governing-law" aria-label="Link to this section">#</a></h2>
                 <p>These Terms shall be governed by and construed in accordance with the laws of the State of California, United States, without regard to its conflict of law provisions.</p>
 
-                <h2>16. Dispute Resolution</h2>
+                <h2 id="dispute-resolution">16. Dispute Resolution<a class="anchor" href="#dispute-resolution" aria-label="Link to this section">#</a></h2>
                 <p>Any disputes arising from these Terms or your use of the App shall be resolved through binding arbitration in accordance with the rules of the American Arbitration Association. The arbitration shall take place in California, and the arbitrator's decision shall be final and binding.</p>
                 <p>You agree to waive any right to a jury trial or to participate in a class action lawsuit.</p>
 
-                <h2>17. Severability</h2>
+                <h2 id="severability">17. Severability<a class="anchor" href="#severability" aria-label="Link to this section">#</a></h2>
                 <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</p>
 
-                <h2>18. Entire Agreement</h2>
+                <h2 id="entire-agreement">18. Entire Agreement<a class="anchor" href="#entire-agreement" aria-label="Link to this section">#</a></h2>
                 <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and us regarding the App and supersede any prior agreements.</p>
 
-                <h2>19. Contact Us</h2>
+                <h2 id="contact-us">19. Contact Us<a class="anchor" href="#contact-us" aria-label="Link to this section">#</a></h2>
                 <p>If you have any questions about these Terms, please contact us at:</p>
                 <p><strong>Email:</strong> <a href="mailto:support@invisiblestringapp.com">support@invisiblestringapp.com</a></p>
 
