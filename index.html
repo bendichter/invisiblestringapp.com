@@ -273,6 +273,13 @@
             line-height: 1.7;
         }
 
+        .store-badges {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+        }
+
         .app-store-badge {
             display: inline-block;
             transition: transform 0.2s;
@@ -284,178 +291,12 @@
 
         .app-store-badge img {
             height: 54px;
+            display: block;
         }
 
-        .android-notify-link {
-            display: inline-block;
-            margin-top: 16px;
-            margin-left: 4px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            text-decoration: none;
-            border-bottom: 1px dashed rgba(221, 45, 74, 0.3);
-            padding-bottom: 1px;
-            transition: color 0.2s, border-color 0.2s;
-        }
-
-        .android-notify-link:hover {
-            color: var(--coral);
-            border-bottom-color: var(--coral);
-        }
-
-        /* ─── Android Beta ─── */
-        .android-beta {
-            padding: 80px 0;
-            position: relative;
-        }
-
-        .android-card {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 28px;
-            padding: 56px 48px;
-            max-width: 720px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .android-card.revealed {
-            opacity: 1;
-            transform: translateY(0);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .android-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--light-cyan), var(--bubblegum), var(--coral));
-        }
-
-        .android-eyebrow {
-            display: inline-block;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--coral);
-            margin-bottom: 14px;
-        }
-
-        .android-card h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            margin-bottom: 14px;
-            color: var(--dark);
-        }
-
-        .android-card h2 em {
-            font-style: italic;
-            background: linear-gradient(135deg, var(--coral), var(--bubblegum));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .android-card > p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            line-height: 1.7;
-            max-width: 520px;
-            margin: 0 auto 32px;
-        }
-
-        .android-form {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            max-width: 460px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .android-form label {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--dark);
-            opacity: 0.75;
-            margin-bottom: -8px;
-            margin-left: 2px;
-        }
-
-        .android-form input,
-        .android-form textarea {
-            font-family: inherit;
-            font-size: 1rem;
-            padding: 14px 18px;
-            background: rgba(255, 255, 255, 0.85);
-            border: 1px solid rgba(221, 45, 74, 0.15);
-            border-radius: 14px;
-            color: var(--dark);
-            transition: border-color 0.2s, box-shadow 0.2s;
-            width: 100%;
-        }
-
-        .android-form input:focus,
-        .android-form textarea:focus {
-            outline: none;
-            border-color: var(--coral);
-            box-shadow: 0 0 0 3px rgba(221, 45, 74, 0.12);
-        }
-
-        .android-form textarea {
-            resize: vertical;
-            min-height: 90px;
-            font-family: inherit;
-        }
-
-        .android-form button {
-            font-family: inherit;
-            font-size: 1rem;
-            font-weight: 600;
-            padding: 14px 28px;
-            background: linear-gradient(135deg, var(--coral), var(--bubblegum));
-            color: white;
-            border: none;
-            border-radius: 14px;
-            cursor: pointer;
-            margin-top: 6px;
-            transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
-        }
-
-        .android-form button:hover:not(:disabled) {
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(221, 45, 74, 0.3);
-        }
-
-        .android-form button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .android-form-status {
-            margin-top: 16px;
-            font-size: 0.95rem;
-            min-height: 1.4em;
-            text-align: center;
-        }
-
-        .android-form-status.success {
-            color: var(--coral);
-            font-weight: 500;
-        }
-
-        .android-form-status.error {
-            color: #b00020;
+        .google-play-badge img {
+            height: 80px;
+            margin: -13px -10px;
         }
 
         /* Invisible string SVG */
@@ -1149,14 +990,6 @@
             .romantic-quote blockquote {
                 font-size: 1.3rem;
             }
-
-            .android-card {
-                padding: 40px 24px;
-            }
-
-            .android-card h2 {
-                font-size: 1.8rem;
-            }
         }
 
         @media (max-width: 480px) {
@@ -1203,8 +1036,7 @@
             .feature-card,
             .step,
             .romantic-quote blockquote,
-            .privacy-card,
-            .android-card {
+            .privacy-card {
                 opacity: 1;
                 transform: none;
             }
@@ -1236,7 +1068,6 @@
                 <ul class="nav-links">
                     <li><a href="#features">Features</a></li>
                     <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#android">Android</a></li>
                     <li><a href="privacy.html">Privacy</a></li>
                     <li><a href="https://apps.apple.com/us/app/invisible-string/id6757892661" class="nav-cta">Download</a></li>
                 </ul>
@@ -1270,11 +1101,13 @@
                     <div class="hero-text">
                         <h1>Discover the moments<br><em>you almost met</em></h1>
                         <p>Were you at the same coffee shop? The same concert? The same street corner? Invisible String reveals the beautiful near-misses in your love story.</p>
-                        <a href="https://apps.apple.com/us/app/invisible-string/id6757892661" class="app-store-badge">
-                            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
-                        </a>
-                        <div>
-                            <a href="#android" class="android-notify-link">Android coming soon &mdash; get notified &darr;</a>
+                        <div class="store-badges">
+                            <a href="https://apps.apple.com/us/app/invisible-string/id6757892661" class="app-store-badge">
+                                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.invisiblestring&pcampaignid=web_share" class="app-store-badge google-play-badge">
+                                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+                            </a>
                         </div>
                     </div>
                     <div class="hero-phone">
@@ -1284,31 +1117,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="android-beta" id="android">
-            <div class="container">
-                <div class="android-card" data-reveal>
-                    <span class="android-eyebrow">Closed Beta</span>
-                    <h2>Coming soon to <em>Android</em></h2>
-                    <p>We're inviting a small group of testers to try Invisible String on Android before launch. Drop your email below and we'll reach out with an invite.</p>
-                    <form class="android-form" id="android-form" action="https://formspree.io/f/mwvazgjp" method="POST">
-                        <label for="android-email">Email</label>
-                        <input type="email" id="android-email" name="email" placeholder="you@example.com" required autocomplete="email">
-
-                        <label for="android-name">Name <span style="opacity:0.6;font-weight:400;">(optional)</span></label>
-                        <input type="text" id="android-name" name="name" placeholder="Your name" autocomplete="name">
-
-                        <label for="android-comments">Comments <span style="opacity:0.6;font-weight:400;">(optional)</span></label>
-                        <textarea id="android-comments" name="comments" placeholder="Anything you'd like us to know?"></textarea>
-
-                        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-                        <button type="submit">Request beta invite</button>
-                    </form>
-                    <div class="android-form-status" id="android-form-status" role="status" aria-live="polite"></div>
                 </div>
             </div>
         </section>
@@ -1484,53 +1292,6 @@
                 }
             });
         });
-
-        // Android beta form — AJAX submit to Formspree
-        const androidForm = document.getElementById('android-form');
-        const androidStatus = document.getElementById('android-form-status');
-
-        if (androidForm) {
-            androidForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const button = androidForm.querySelector('button[type="submit"]');
-                const originalLabel = button.textContent;
-
-                androidStatus.className = 'android-form-status';
-                androidStatus.textContent = '';
-                button.disabled = true;
-                button.textContent = 'Sending...';
-
-                try {
-                    const response = await fetch(androidForm.action, {
-                        method: 'POST',
-                        body: new FormData(androidForm),
-                        headers: { 'Accept': 'application/json' }
-                    });
-
-                    if (response.ok) {
-                        androidForm.reset();
-                        androidStatus.className = 'android-form-status success';
-                        androidStatus.textContent = "Thank you! We'll be in touch when the beta opens.";
-                        button.textContent = originalLabel;
-                        button.disabled = false;
-                    } else {
-                        const data = await response.json().catch(() => ({}));
-                        const msg = data.errors && data.errors.length
-                            ? data.errors.map(err => err.message).join(', ')
-                            : "Something went wrong. Please try again.";
-                        androidStatus.className = 'android-form-status error';
-                        androidStatus.textContent = msg;
-                        button.textContent = originalLabel;
-                        button.disabled = false;
-                    }
-                } catch (err) {
-                    androidStatus.className = 'android-form-status error';
-                    androidStatus.textContent = "Network error. Please try again.";
-                    button.textContent = originalLabel;
-                    button.disabled = false;
-                }
-            });
-        }
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
