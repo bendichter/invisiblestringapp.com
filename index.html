@@ -14,6 +14,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://invisiblestringapp.com">
     <meta property="og:image" content="https://invisiblestringapp.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -138,6 +140,42 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
+        }
+
+        h1, h2, h3 {
+            text-wrap: balance;
+        }
+
+        ::selection {
+            background: var(--pink-mist);
+            color: var(--crushed-berry);
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--coral);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        .section-eyebrow {
+            display: block;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--coral);
+            margin-bottom: 14px;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 540px;
+            margin: 0 auto 56px;
         }
 
         /* ─── Header ─── */
@@ -294,6 +332,28 @@
             z-index: 2;
         }
 
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(221, 45, 74, 0.12);
+            border-radius: 24px;
+            padding: 7px 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .hero-badge .stars {
+            color: #F5A623;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 3.6rem;
@@ -423,6 +483,24 @@
             display: flex;
             justify-content: center;
             perspective: 1000px;
+            position: relative;
+        }
+
+        .hero-phone::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle,
+                rgba(244, 156, 187, 0.35) 0%,
+                rgba(135, 222, 234, 0.18) 45%,
+                transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
         }
 
         .phone-frame {
@@ -441,6 +519,19 @@
 
         .phone-frame:hover {
             transform: rotateY(0deg) rotateX(0deg);
+        }
+
+        .phone-frame::after {
+            content: '';
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 84px;
+            height: 22px;
+            background: #1a1a2e;
+            border-radius: 12px;
+            z-index: 2;
         }
 
         .phone-screen {
@@ -468,7 +559,7 @@
             text-align: center;
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
-            margin-bottom: 60px;
+            margin-bottom: 16px;
             color: var(--dark);
         }
 
@@ -648,7 +739,7 @@
             text-align: center;
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
-            margin-bottom: 60px;
+            margin-bottom: 16px;
             color: var(--dark);
         }
 
@@ -730,17 +821,6 @@
             font-size: 2.5rem;
             margin-bottom: 16px;
             color: var(--dark);
-        }
-
-        .testimonials-eyebrow {
-            display: block;
-            text-align: center;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--coral);
-            margin-bottom: 14px;
         }
 
         .testimonial-card {
@@ -941,6 +1021,50 @@
             color: white;
         }
 
+        /* ─── Download CTA ─── */
+        .download-cta {
+            padding: 40px 0 100px;
+            text-align: center;
+        }
+
+        .download-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .download-cta h2 em {
+            font-style: italic;
+            background: linear-gradient(135deg, var(--coral), var(--bubblegum));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .download-cta p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 480px;
+            margin: 0 auto 32px;
+        }
+
+        .download-cta .store-badges {
+            justify-content: center;
+        }
+
+        .download-cta-inner {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .download-cta-inner.revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
         /* ─── Footer ─── */
         footer {
             padding: 40px 0;
@@ -953,6 +1077,27 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 20px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .footer-brand img {
+            width: 28px;
+            height: 28px;
+            border-radius: 7px;
+        }
+
+        .footer-brand span {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--dark);
+            opacity: 0.85;
         }
 
         .footer-links {
@@ -993,6 +1138,10 @@
             .hero p {
                 margin-left: auto;
                 margin-right: auto;
+            }
+
+            .store-badges {
+                justify-content: center;
             }
 
             .hero h1 {
@@ -1138,7 +1287,9 @@
             .feature-card,
             .step,
             .romantic-quote blockquote,
-            .privacy-card {
+            .testimonial-card,
+            .privacy-card,
+            .download-cta-inner {
                 opacity: 1;
                 transform: none;
             }
@@ -1209,7 +1360,8 @@
 
                 <div class="hero-grid">
                     <div class="hero-text">
-                        <h1>Discover the moments<br><em>you almost met</em></h1>
+                        <div class="hero-badge"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> Loved on the App Store</div>
+                        <h1>Discover the moments <em>you almost met</em></h1>
                         <p>Were you at the same coffee shop? The same concert? The same street corner? Invisible String reveals the beautiful near-misses in your love story.</p>
                         <div class="store-badges">
                             <a href="https://apps.apple.com/us/app/invisible-string/id6757892661" class="app-store-badge">
@@ -1233,7 +1385,9 @@
 
         <section class="features" id="features">
             <div class="container">
+                <span class="section-eyebrow">Features</span>
                 <h2>Your story, beautifully told</h2>
+                <p class="section-sub">Every couple has near-misses they never knew about. Invisible String finds them and turns them into something you can keep.</p>
                 <div class="features-grid">
                     <div class="feature-card accent-cyan" data-reveal data-delay="0">
                         <div class="feature-icon-wrap">
@@ -1268,7 +1422,9 @@
 
         <section class="how-it-works" id="how-it-works">
             <div class="container">
+                <span class="section-eyebrow">Simple by design</span>
                 <h2>How it works</h2>
+                <p class="section-sub">No accounts, no uploads &mdash; just you, your partner, and your photo libraries.</p>
                 <div class="steps-wrapper">
                     <!-- SVG dashed string connector -->
                     <svg class="steps-connector" viewBox="0 0 800 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1302,7 +1458,7 @@
 
         <section class="testimonials">
             <div class="container">
-                <span class="testimonials-eyebrow">Loved on the App Store</span>
+                <span class="section-eyebrow">Loved on the App Store</span>
                 <h2>What people are saying</h2>
                 <div class="testimonial-card" data-reveal>
                     <div class="testimonial-header">
@@ -1331,11 +1487,32 @@
                 </div>
             </div>
         </section>
+
+        <section class="download-cta">
+            <div class="container">
+                <div class="download-cta-inner" data-reveal>
+                    <h2>Start following <em>your string</em></h2>
+                    <p>Free to download. Pair with your partner in seconds and see where your paths crossed.</p>
+                    <div class="store-badges">
+                        <a href="https://apps.apple.com/us/app/invisible-string/id6757892661" class="app-store-badge">
+                            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.invisiblestring&pcampaignid=web_share" class="app-store-badge google-play-badge">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="container">
             <div class="footer-content">
+                <a href="/" class="footer-brand">
+                    <img src="app-icon.png" alt="" />
+                    <span>Invisible String</span>
+                </a>
                 <ul class="footer-links">
                     <li><a href="privacy.html">Privacy Policy</a></li>
                     <li><a href="terms.html">Terms of Service</a></li>
