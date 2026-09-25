@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Invisible String</title>
-    <meta name="description" content="Privacy Policy for Invisible String app. Learn how we protect your data.">
+    <meta name="description" content="What Invisible String collects, where it goes, and how long it is kept.">
+    <meta name="theme-color" content="#DD2D4A">
+    <link rel="canonical" href="https://invisiblestringapp.com/privacy.html">
+    <meta property="og:title" content="Privacy Policy - Invisible String">
+    <meta property="og:description" content="What Invisible String collects, where it goes, and how long it is kept.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://invisiblestringapp.com/privacy.html">
+    <meta property="og:site_name" content="Invisible String">
+    <meta property="og:image" content="https://invisiblestringapp.com/og-image.png">
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <style>
         :root {
             --raspberry: #dd2d4a;
@@ -131,6 +140,10 @@
             font-weight: 500;
         }
 
+        .table-scroll {
+            overflow-x: auto;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -193,14 +206,14 @@
     <main>
         <div class="container">
             <h1>Privacy Policy</h1>
-            <p class="last-updated">Last Updated: July 27, 2026</p>
+            <p class="last-updated">Last Updated: September 25, 2026</p>
 
             <div class="content">
                 <h2>Introduction</h2>
-                <p>Invisible String ("App," "we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application on iOS or Android.</p>
+                <p>This Privacy Policy explains what Invisible String ("App," "we," "us," or "our") collects, where that information goes, and how long it is kept when you use our mobile app on iOS or Android.</p>
 
                 <div class="highlight-box">
-                    <p>Key Point: Matching happens entirely on your phone using photo metadata. Your photos stay on your device unless you choose to share selected photos with your partner, and they are never sent to our servers.</p>
+                    <p>Key Point: Matching happens entirely on your phone using photo metadata. Your photos are never uploaded to any server. The only data that leaves your phone is what you choose to send to your partner.</p>
                 </div>
 
                 <h2>Information We Collect</h2>
@@ -214,8 +227,9 @@
 
                 <h3>Information Collected Automatically</h3>
                 <ul>
-                    <li><strong>Photo Metadata:</strong> When you grant photo library access, we scan your photos' metadata (location coordinates and timestamps) on your device. We do not upload, collect, or store your photos on any server.</li>
-                    <li><strong>Device Information:</strong> Basic device identifiers for app functionality</li>
+                    <li><strong>Photo Metadata:</strong> When you grant photo library access, the App reads the location coordinates and timestamps saved with your photos (and, on iPhone, your videos). This happens on your device. We do not upload, collect, or store your photos on any server.</li>
+                    <li><strong>On-Device Photo Analysis:</strong> To pick a good photo for each moment, the App looks at image content on your device (for example, whether a photo contains faces, text, or scenery). The results of this analysis never leave your device.</li>
+                    <li><strong>Device and Usage Information:</strong> App version, operating system version, device model, and anonymous usage events (see Analytics below)</li>
                 </ul>
 
                 <h3>Information Shared with Your Partner</h3>
@@ -223,11 +237,13 @@
                 <ul>
                     <li>Photo location coordinates (latitude/longitude)</li>
                     <li>Photo timestamps</li>
+                    <li>Photo reference IDs (identifiers that point to photos in your library, not the photos themselves)</li>
                     <li>Your name</li>
+                    <li>The date you met</li>
                 </ul>
 
                 <h3>Photo Sharing Between Partners</h3>
-                <p>The App includes an optional feature for sharing photos from your matched moments with your partner. If you choose to use it, small previews of the photos you select are sent directly to your partner's phone over an encrypted device-to-device connection. You pick each photo, and your partner must accept before anything is sent. Shared photos are stored only on your two devices. We never receive, access, or store your photos on any server.</p>
+                <p>The iPhone app includes an optional, in-person feature for sharing photos from your matched moments with your partner. If you choose to use it, small previews of the photos you select are sent directly to your partner's phone over an encrypted device-to-device connection. You pick each photo, and your partner must accept before anything is sent. Shared photos are stored only on your two devices. We never receive, access, or store your photos on any server.</p>
 
                 <h2>How We Use Your Information</h2>
                 <p>We use your information solely to:</p>
@@ -248,17 +264,18 @@
 
                 <h3>Data Encryption</h3>
                 <ul>
-                    <li>Data shared between partners is encrypted end-to-end</li>
-                    <li>Only you and your partner can decrypt your shared location data</li>
-                    <li>We cannot read or access your encrypted data</li>
+                    <li><strong>Invite code transfers</strong> are encrypted on your device (AES-256-GCM) before upload, using a key derived from the invite code. Anyone who has the code can decrypt the data until it expires, so share the code only with your partner.</li>
+                    <li><strong>Nearby transfers (iPhone)</strong> use Apple's encrypted peer-to-peer connection between the two phones.</li>
+                    <li><strong>Exported data files</strong> (see File Export below) are not encrypted.</li>
                 </ul>
 
                 <h3>Partner Data Transfer</h3>
                 <ul>
-                    <li>We do not operate our own servers or databases</li>
-                    <li><strong>Invite Code Pairing (iOS and Android):</strong> When you pair using a 6-character invite code, your end-to-end encrypted data is temporarily stored in Google Firebase (Cloud Firestore and/or Cloud Storage) for up to 48 hours, then automatically deleted. The data is encrypted on your device before upload, and only your partner's device—using the invite code—can decrypt it. We cannot read its contents.</li>
-                    <li><strong>Nearby Pairing (iOS):</strong> Data transfers directly between devices over Bluetooth/Wi-Fi with no cloud involvement.</li>
-                    <li>No permanent records of your data exist outside your device or your partner's device</li>
+                    <li>We do not operate our own servers, and we keep no user accounts</li>
+                    <li><strong>Invite Code Pairing (iOS and Android):</strong> When you pair using a 6-character invite code, your photo locations and timestamps are encrypted on your device and then held in Google Firebase Realtime Database so your partner can download them. The code expires 12 hours after it is created, and expired records are deleted automatically, always within 48 hours.</li>
+                    <li><strong>Nearby Pairing (iOS):</strong> Data transfers directly between the two phones over Bluetooth/Wi-Fi with no cloud involvement.</li>
+                    <li><strong>File Export (iOS and Android):</strong> If you choose Share File (iOS) or Export Data (Android), the App creates a file containing your name, meeting date, and photo locations and timestamps, and hands it to the app you pick (Messages, email, and so on). This file is not encrypted, so share it only with your partner.</li>
+                    <li>Apart from the short-lived pairing records above, no copies of your data exist outside your device, your partner's device, and your own device backups</li>
                 </ul>
 
                 <h2>Data Sharing</h2>
@@ -266,8 +283,8 @@
                 <ul>
                     <li>Sell your personal information</li>
                     <li>Share your data with advertisers</li>
-                    <li>Use your photos for any purpose other than metadata extraction</li>
-                    <li>Store your unencrypted data on any server (encrypted invite-code data is held briefly on Firebase, then auto-deleted within 48 hours)</li>
+                    <li>Use your photos for anything other than finding and displaying your moments</li>
+                    <li>Upload your photos to any server</li>
                     <li>Access your data without your explicit action</li>
                 </ul>
 
@@ -285,7 +302,7 @@
                     <li><strong>App Store:</strong> Handles app distribution and payment processing</li>
                     <li><strong>StoreKit:</strong> Manages in-app purchases</li>
                     <li><strong>Photos Framework:</strong> Provides access to photo metadata (with your permission)</li>
-                    <li><strong>MapKit:</strong> Displays maps and converts coordinates to place names</li>
+                    <li><strong>MapKit and Core Location:</strong> Display maps and look up place names. The coordinates of matched moments are sent to Apple to look up place names.</li>
                 </ul>
 
                 <h3>Android Platform Services</h3>
@@ -293,21 +310,24 @@
                     <li><strong>Google Play Store:</strong> Handles app distribution and payment processing</li>
                     <li><strong>Google Play Billing:</strong> Manages in-app purchases</li>
                     <li><strong>MediaStore:</strong> Provides access to photo metadata (with your permission)</li>
-                    <li><strong>Google Maps SDK:</strong> Displays maps and converts coordinates to place names</li>
+                    <li><strong>Google Maps SDK:</strong> Displays maps</li>
+                    <li><strong>Android Geocoder:</strong> Looks up place names. The coordinates of matched moments are sent to Google for this.</li>
                 </ul>
 
                 <h3>Google Firebase (Both Platforms)</h3>
-                <p>We use <strong>Google Firebase</strong> to relay end-to-end encrypted data between paired partners when you use invite code pairing. Specifically:</p>
+                <p>We use <strong>Google Firebase</strong> to relay encrypted data between paired partners when you use invite code pairing. Specifically:</p>
                 <ul>
-                    <li>Encrypted data is uploaded to Cloud Firestore and/or Cloud Storage for Firebase, keyed by your one-time invite code</li>
-                    <li>Data is encrypted on your device before it reaches Firebase—Google and Invisible String cannot read its contents</li>
-                    <li>Encrypted records are automatically deleted within 48 hours</li>
-                    <li>Firebase may also be used for anonymous crash diagnostics on Android (Firebase Crashlytics) to help us fix bugs</li>
+                    <li>Encrypted data is uploaded to Firebase Realtime Database, stored under a one-way hash of your invite code</li>
+                    <li>Your photo locations and timestamps are encrypted on your device before they reach Firebase</li>
+                    <li>Invite codes expire after 12 hours, and expired records are deleted automatically, always within 48 hours</li>
+                    <li>If you redeem a promo code, the App sends a one-way hash of the code to Firebase to check whether it is valid</li>
                 </ul>
                 <p>Firebase is operated by Google LLC. Data may be processed on Google Cloud infrastructure outside your country of residence. See <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase's Privacy and Security</a> page for more information.</p>
 
-                <h3>Analytics (Both Platforms)</h3>
-                <p>We use <strong>TelemetryDeck</strong>, a privacy-focused analytics service, to understand how the app is used. TelemetryDeck collects anonymous usage events (such as "scan started" or "story viewed") without any personal information, device identifiers, or tracking across apps. No advertising networks or data brokers receive your information.</p>
+                <h3>Analytics</h3>
+                <p>On iOS we use <strong>TelemetryDeck</strong>, a privacy-focused analytics service, to understand how the app is used. It receives anonymous usage events (such as "scan started" or "story viewed") along with the app version, OS version, and device model. Events are linked to a random installation identifier that is hashed before it leaves your phone, so we cannot tie it back to you. Your name, photos, and locations are never included.</p>
+                <p>On Android we use <strong>Google Analytics for Firebase</strong>, which automatically records basic app-usage events (such as first open and session length) along with an app-instance identifier, device model, OS version, and approximate country. Collection of the advertising ID is disabled. Your name, photos, and locations are never included.</p>
+                <p>Neither service tracks you across other apps, and no advertising networks or data brokers receive your information.</p>
 
                 <h2>Your Rights and Choices</h2>
 
@@ -317,11 +337,11 @@
                     <li><strong>View Your Data:</strong> See all stored data within the App</li>
                     <li><strong>Delete Your Data:</strong> Use "Start Over" in Settings to delete all local data</li>
                     <li><strong>Revoke Photo Access:</strong> Change permissions in your device's Settings app</li>
-                    <li><strong>Disconnect from Partner:</strong> End the connection and remove shared data</li>
+                    <li><strong>Disconnect from Partner:</strong> End the connection and remove your partner's data from your device</li>
                 </ul>
 
                 <h3>Data Portability</h3>
-                <p>Your data exists only on your device. Uninstalling the App removes all data.</p>
+                <p>Your data is stored on your device (and in your device backups, if you have them turned on) and on your partner's device. You can export your photo locations as a file from the pairing screen.</p>
 
                 <h3>Opt-Out</h3>
                 <p>You may stop using the App at any time. Deleting the App removes all associated data from your device.</p>
@@ -333,24 +353,24 @@
                 <ul>
                     <li><strong>Local Data:</strong> Stored on your device until you delete it or uninstall the App</li>
                     <li><strong>Shared Data:</strong> Exists on your device and your partner's device</li>
-                    <li><strong>Pairing Relay (Firebase):</strong> End-to-end encrypted invite-code data is automatically deleted within 48 hours</li>
-                    <li><strong>Server Data:</strong> We do not retain any unencrypted personal data on any server</li>
+                    <li><strong>Pairing Relay (Firebase):</strong> Encrypted invite-code data expires after 12 hours and is deleted automatically, always within 48 hours</li>
+                    <li><strong>Analytics:</strong> Anonymous usage events are retained by TelemetryDeck (iOS) or Google Analytics for Firebase (Android) according to their retention settings</li>
                 </ul>
 
                 <h2>Security Measures</h2>
                 <p>We implement appropriate security measures including:</p>
                 <ul>
-                    <li>End-to-end encryption for partner data sharing</li>
-                    <li>Local-only processing of sensitive photo data</li>
-                    <li>No transmission of actual photo content</li>
-                    <li>Secure temporary channels for pairing</li>
+                    <li>Encryption on your device before partner data is uploaded for invite code pairing</li>
+                    <li>Local-only processing of your photo library</li>
+                    <li>Photos are only sent when you choose to share previews with your partner in person (iOS)</li>
+                    <li>Short-lived pairing records that expire automatically</li>
                 </ul>
 
                 <h2>Changes to This Policy</h2>
                 <p>We may update this Privacy Policy from time to time. We will notify you of changes by:</p>
                 <ul>
                     <li>Updating the "Last Updated" date</li>
-                    <li>Posting a notice in the App for material changes</li>
+                    <li>Posting a notice on this page for material changes</li>
                 </ul>
                 <p>Your continued use of the App after changes constitutes acceptance of the updated policy.</p>
 
@@ -361,12 +381,13 @@
                     <li>Request deletion of your personal information</li>
                     <li>Not be discriminated against for exercising your privacy rights</li>
                 </ul>
-                <p>Since we process data locally and don't maintain databases of user information, most CCPA requests are satisfied by the App's built-in data deletion features.</p>
+                <p>Since we process data locally, keep no user accounts, and only hold short-lived encrypted pairing records, most CCPA requests are satisfied by the App's built-in data deletion features.</p>
 
                 <h2>International Users</h2>
-                <p>The App processes your photo metadata locally on your device regardless of your location. When you use invite code pairing, your end-to-end encrypted partner data is briefly relayed through Google Firebase, which may store it on Google Cloud infrastructure outside your country of residence before automatic deletion within 48 hours. Because the data is encrypted on your device before upload, neither Google nor Invisible String can read it.</p>
+                <p>The App processes your photo metadata locally on your device regardless of your location. When you use invite code pairing, your encrypted partner data is briefly relayed through Google Firebase, which may store it on Google Cloud infrastructure outside your country of residence before it is deleted automatically, always within 48 hours.</p>
 
                 <h2>Summary</h2>
+                <div class="table-scroll">
                 <table>
                     <thead>
                         <tr>
@@ -379,9 +400,9 @@
                     <tbody>
                         <tr>
                             <td>Your Photos</td>
-                            <td>No (metadata only)</td>
+                            <td>No (analyzed on device only)</td>
                             <td>No</td>
-                            <td>No</td>
+                            <td>Only previews you choose (iOS, in person)</td>
                         </tr>
                         <tr>
                             <td>Photo Locations</td>
@@ -410,11 +431,12 @@
                         <tr>
                             <td>Usage Analytics</td>
                             <td>Yes (anonymous events)</td>
-                            <td>No (sent to TelemetryDeck)</td>
+                            <td>No (sent to TelemetryDeck on iOS, Google Analytics for Firebase on Android)</td>
                             <td>No</td>
                         </tr>
                     </tbody>
                 </table>
+                </div>
 
                 <h2>Contact Us</h2>
                 <p>If you have questions about this Privacy Policy or our privacy practices, please contact us at:</p>
@@ -425,7 +447,7 @@
 
     <footer>
         <div class="container">
-            <p><a href="/">Home</a> &middot; <a href="terms.html">Terms of Service</a> &middot; &copy; 2025 Invisible String</p>
+            <p><a href="/">Home</a> &middot; <a href="terms.html">Terms of Service</a> &middot; &copy; 2026 Invisible String</p>
         </div>
     </footer>
 </body>
