@@ -25,12 +25,12 @@ jobs:
       # Leave out CNAME and .nojekyll: the deploy action never deletes them,
       # so they would be left behind after the preview is removed
       - name: Stage site
-        run: rsync -a --exclude .git --exclude .github --exclude CNAME --exclude .nojekyll ./ "$RUNNER_TEMP/site/"
+        run: rsync -a --exclude .git --exclude .github --exclude CNAME --exclude .nojekyll --exclude _site ./ _site/
 
       # Publishes to gh-pages under pr-preview/pr-<number>/, comments the
       # link on the PR, and removes the preview when the PR closes
       - uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: ${{ runner.temp }}/site
+          source-dir: _site
           preview-branch: gh-pages
           umbrella-dir: pr-preview
