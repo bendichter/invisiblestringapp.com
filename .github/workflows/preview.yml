@@ -8,8 +8,10 @@ permissions:
   contents: write
   pull-requests: write
 
+# One group per PR: a group shared with the deploy would let a queued deploy
+# cancel the pending cleanup run when a PR is merged
 concurrency:
-  group: gh-pages
+  group: preview-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -20,10 +22,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Leave out CNAME and .nojekyll: the deploy action never deletes them,
+      # so they would be left behind after the preview is removed
+      - name: Stage site
+        run: rsync -a --exclude .git --exclude .github --exclude CNAME --exclude .nojekyll ./ "$RUNNER_TEMP/site/"
+
       # Publishes to gh-pages under pr-preview/pr-<number>/, comments the
       # link on the PR, and removes the preview when the PR closes
       - uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: .
+          source-dir: ${{ runner.temp }}/site
           preview-branch: gh-pages
           umbrella-dir: pr-preview
