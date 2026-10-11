@@ -826,6 +826,45 @@
             font-size: 0.95rem;
         }
 
+        /* ─── Walkthrough Video ─── */
+        .walkthrough {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .walkthrough h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .video-frame {
+            max-width: 840px;
+            margin: 0 auto;
+            aspect-ratio: 3 / 2;
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--dark);
+            box-shadow: 0 16px 40px rgba(221, 45, 74, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .video-frame.revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .video-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
         /* ─── Testimonials ─── */
         .testimonials {
             padding: 80px 0;
@@ -1228,7 +1267,8 @@
             }
 
             .features h2,
-            .how-it-works h2 {
+            .how-it-works h2,
+            .walkthrough h2 {
                 font-size: 2rem;
             }
 
@@ -1277,7 +1317,8 @@
             }
 
             .features h2,
-            .how-it-works h2 {
+            .how-it-works h2,
+            .walkthrough h2 {
                 font-size: 1.7rem;
             }
 
@@ -1311,6 +1352,7 @@
             .step,
             .romantic-quote blockquote,
             .testimonial-card,
+            .video-frame,
             .privacy-card,
             .download-cta-inner {
                 opacity: 1;
@@ -1486,6 +1528,17 @@
                             <p>Create and share beautiful story cards of your invisible string.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="walkthrough" id="walkthrough">
+            <div class="container">
+                <span class="section-eyebrow">See it in action</span>
+                <h2>Watch the walkthrough</h2>
+                <p class="section-sub">Follow along as the app scans, pairs, and uncovers the moments two paths crossed.</p>
+                <div class="video-frame" data-reveal>
+                    <iframe src="https://www.youtube-nocookie.com/embed/7BT-q7AFjG8?start=137&amp;rel=0" title="Invisible String App Walkthrough" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
