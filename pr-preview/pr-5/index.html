@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invisible String - Discover Your Love Story</title>
+    <meta name="description" content="Find the moments you almost met before you found each other. Invisible String reveals the beautiful near-misses in your love story.">
+    <meta name="apple-itunes-app" content="app-id=6757892661">
+    <meta name="theme-color" content="#DD2D4A">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Invisible String">
+    <meta property="og:description" content="Discover the moments you almost met before you found each other.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://invisiblestringapp.com/">
+    <meta property="og:site_name" content="Invisible String">
+    <meta property="og:image:alt" content="Invisible String: discover the moments you almost met">
+    <meta property="og:image" content="https://invisiblestringapp.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Invisible String">
+    <meta name="twitter:description" content="Discover the moments you almost met before you found each other.">
+    <meta name="twitter:image" content="https://invisiblestringapp.com/og-image.png">
+    <meta name="twitter:image:alt" content="Invisible String: discover the moments you almost met">
+
+    <link rel="canonical" href="https://invisiblestringapp.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --coral: #DD2D4A;
+            --pink-mist: #F49CBB;
+            --light-cyan: #87DEEA;
+            --bubblegum: #F26A8D;
+            --crushed-berry: #880D1E;
+            --dark: #2B1B1F;
+            --warm-white: #FFF9F7;
+            --text-muted: #7A6068;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            overflow-x: clip;
+        }
+
+        section[id] {
+            scroll-margin-top: 88px;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--warm-white);
+            min-height: 100vh;
+            color: var(--dark);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(135, 222, 234, 0.12) 0%,
+                rgba(244, 156, 187, 0.1) 40%,
+                rgba(255, 249, 247, 0.6) 70%,
+                rgba(135, 222, 234, 0.08) 100%
+            );
+            z-index: -2;
+            animation: bgShift 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes bgShift {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        /* Floating background circles */
+        .bg-circle {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .bg-circle-1 {
+            width: 500px;
+            height: 500px;
+            background: rgba(135, 222, 234, 0.18);
+            top: -100px;
+            right: -100px;
+            animation: drift1 25s ease-in-out infinite alternate;
+        }
+
+        .bg-circle-2 {
+            width: 400px;
+            height: 400px;
+            background: rgba(244, 156, 187, 0.15);
+            bottom: 10%;
+            left: -80px;
+            animation: drift2 30s ease-in-out infinite alternate;
+        }
+
+        .bg-circle-3 {
+            width: 350px;
+            height: 350px;
+            background: rgba(242, 106, 141, 0.1);
+            top: 40%;
+            right: 10%;
+            animation: drift3 22s ease-in-out infinite alternate;
+        }
+
+        @keyframes drift1 {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-60px, 80px); }
+        }
+        @keyframes drift2 {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, -60px); }
+        }
+        @keyframes drift3 {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-40px, -50px); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        h1, h2, h3 {
+            text-wrap: balance;
+        }
+
+        ::selection {
+            background: var(--pink-mist);
+            color: var(--crushed-berry);
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--coral);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        .section-eyebrow {
+            display: block;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--coral);
+            margin-bottom: 14px;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 540px;
+            margin: 0 auto 56px;
+        }
+
+        /* ─── Header ─── */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 18px 0;
+            background: rgba(255, 249, 247, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(221, 45, 74, 0.06);
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        header.scrolled {
+            background: rgba(255, 249, 247, 0.92);
+            box-shadow: 0 2px 20px rgba(136, 13, 30, 0.06);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--dark);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--coral), var(--bubblegum));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            opacity: 0.75;
+            transition: opacity 0.2s, color 0.2s;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--coral);
+        }
+
+        .nav-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--coral), #C0243F);
+            color: white !important;
+            -webkit-text-fill-color: white !important;
+            padding: 8px 20px;
+            border-radius: 24px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 1 !important;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(221, 45, 74, 0.3);
+            color: white !important;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: 0;
+            padding: 8px;
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 101;
+        }
+
+        .hamburger-box {
+            position: relative;
+            width: 24px;
+            height: 18px;
+        }
+
+        .hamburger-line {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--dark);
+            border-radius: 2px;
+            transition: transform 0.25s ease, opacity 0.2s ease, top 0.25s ease;
+        }
+
+        .hamburger-line:nth-child(1) { top: 0; }
+        .hamburger-line:nth-child(2) { top: 8px; }
+        .hamburger-line:nth-child(3) { top: 16px; }
+
+        .hamburger[aria-expanded="true"] .hamburger-line:nth-child(1) {
+            top: 8px;
+            transform: rotate(45deg);
+        }
+        .hamburger[aria-expanded="true"] .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger[aria-expanded="true"] .hamburger-line:nth-child(3) {
+            top: 8px;
+            transform: rotate(-45deg);
+        }
+
+        /* ─── Hero ─── */
+        .hero {
+            padding: 160px 0 100px;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(221, 45, 74, 0.12);
+            border-radius: 24px;
+            padding: 7px 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .hero-badge .stars {
+            color: #F5A623;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.6rem;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            color: var(--dark);
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            background: linear-gradient(135deg, var(--coral), var(--bubblegum));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 480px;
+            margin-bottom: 36px;
+            line-height: 1.7;
+        }
+
+        .store-badges {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .app-store-badge {
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .app-store-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .app-store-badge img {
+            height: 54px;
+            display: block;
+        }
+
+        .google-play-badge img {
+            height: 80px;
+            margin: -13px -10px;
+        }
+
+        /* Invisible string SVG */
+        .string-svg {
+            position: absolute;
+            top: -30px;
+            left: -40px;
+            width: 500px;
+            height: 300px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .string-path {
+            stroke-dasharray: 600;
+            stroke-dashoffset: 600;
+            animation: drawPath 2s ease-out forwards;
+        }
+
+        .string-path-2 {
+            stroke-dasharray: 600;
+            stroke-dashoffset: 600;
+            animation: drawPath 2s ease-out 0.3s forwards;
+        }
+
+        .string-heart {
+            opacity: 0;
+            animation: heartAppear 0.6s ease-out 1.8s forwards;
+        }
+
+        @keyframes drawPath {
+            to { stroke-dashoffset: 0; }
+        }
+
+        @keyframes heartAppear {
+            0% { opacity: 0; transform: scale(0.5); }
+            60% { opacity: 1; transform: scale(1.15); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Floating hearts */
+        .floating-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .float-heart {
+            position: absolute;
+            animation: floatUp linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 0;
+                transform: translateY(0) rotate(0deg) scale(0.8);
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-500px) rotate(20deg) scale(0.4);
+            }
+        }
+
+        /* Phone mockup */
+        .hero-phone {
+            display: flex;
+            justify-content: center;
+            perspective: 1000px;
+            position: relative;
+        }
+
+        .hero-phone::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle,
+                rgba(244, 156, 187, 0.35) 0%,
+                rgba(135, 222, 234, 0.18) 45%,
+                transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .phone-frame {
+            width: 280px;
+            height: 580px;
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow:
+                0 30px 60px rgba(43, 27, 31, 0.25),
+                0 0 0 2px rgba(255, 255, 255, 0.1);
+            transform: rotateY(-8deg) rotateX(4deg);
+            transition: transform 0.5s ease;
+            position: relative;
+        }
+
+        .phone-frame:hover {
+            transform: rotateY(0deg) rotateX(0deg);
+        }
+
+        .phone-frame::after {
+            content: '';
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 84px;
+            height: 22px;
+            background: #1a1a2e;
+            border-radius: 12px;
+            z-index: 2;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .phone-screen picture {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .phone-screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+        }
+
+        /* ─── Features ─── */
+        .features {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 24px;
+            padding: 40px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .feature-card.revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .feature-card.accent-cyan::before {
+            background: linear-gradient(90deg, var(--light-cyan), rgba(135, 222, 234, 0.3));
+        }
+
+        .feature-card.accent-bubblegum::before {
+            background: linear-gradient(90deg, var(--bubblegum), rgba(242, 106, 141, 0.3));
+        }
+
+        .feature-card.accent-coral::before {
+            background: linear-gradient(90deg, var(--coral), rgba(221, 45, 74, 0.3));
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(221, 45, 74, 0.1);
+        }
+
+        .feature-card.revealed:hover {
+            transform: translateY(-6px);
+        }
+
+        .feature-icon-wrap {
+            position: relative;
+            width: 64px;
+            height: 64px;
+            margin-bottom: 24px;
+        }
+
+        .feature-icon-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 20px;
+            border: 2px solid transparent;
+            animation: pulseRing 3s ease-in-out infinite;
+        }
+
+        .accent-cyan .feature-icon-wrap::before {
+            border-color: rgba(135, 222, 234, 0.3);
+        }
+        .accent-bubblegum .feature-icon-wrap::before {
+            border-color: rgba(242, 106, 141, 0.3);
+        }
+        .accent-coral .feature-icon-wrap::before {
+            border-color: rgba(221, 45, 74, 0.3);
+        }
+
+        @keyframes pulseRing {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.08); opacity: 0.6; }
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .accent-cyan .feature-icon {
+            background: linear-gradient(135deg, var(--light-cyan), rgba(135, 222, 234, 0.5));
+        }
+        .accent-bubblegum .feature-icon {
+            background: linear-gradient(135deg, var(--bubblegum), rgba(242, 106, 141, 0.5));
+        }
+        .accent-coral .feature-icon {
+            background: linear-gradient(135deg, var(--coral), rgba(221, 45, 74, 0.5));
+        }
+
+        .feature-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* ─── Romantic Quote ─── */
+        .romantic-quote {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .romantic-quote blockquote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.6rem;
+            color: var(--coral);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .romantic-quote blockquote.revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .romantic-quote blockquote::before,
+        .romantic-quote blockquote::after {
+            font-size: 3rem;
+            color: var(--pink-mist);
+            line-height: 1;
+            vertical-align: top;
+        }
+
+        .romantic-quote blockquote::before {
+            content: '\201C';
+            margin-right: 4px;
+        }
+
+        .romantic-quote blockquote::after {
+            content: '\201D';
+            margin-left: 4px;
+        }
+
+        /* ─── How It Works ─── */
+        .how-it-works {
+            padding: 80px 0;
+            background: linear-gradient(180deg, rgba(244, 156, 187, 0.06) 0%, rgba(135, 222, 234, 0.06) 100%);
+            position: relative;
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .steps-wrapper {
+            position: relative;
+        }
+
+        .steps-connector {
+            position: absolute;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 60px;
+            pointer-events: none;
+        }
+
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step {
+            text-align: center;
+            max-width: 240px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .step.revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .step-number {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, var(--coral), var(--bubblegum));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 16px rgba(221, 45, 74, 0.25);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .step h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .step p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* ─── Walkthrough Video ─── */
+        .walkthrough {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .walkthrough h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .video-frame {
+            max-width: 840px;
+            margin: 0 auto;
+            aspect-ratio: 3 / 2;
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--dark);
+            box-shadow: 0 16px 40px rgba(221, 45, 74, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .video-frame.revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .video-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        /* ─── Testimonials ─── */
+        .testimonials {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 24px;
+            padding: 44px 48px;
+            max-width: 720px;
+            margin: 40px auto 0;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .testimonial-card.revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--coral), var(--bubblegum), var(--pink-mist));
+        }
+
+        .testimonial-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+
+        .testimonial-stars {
+            color: #F5A623;
+            font-size: 1.15rem;
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        .testimonial-meta {
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .testimonial-meta strong {
+            display: block;
+            font-weight: 500;
+            color: var(--dark);
+            opacity: 0.75;
+        }
+
+        .testimonial-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            line-height: 1.3;
+            margin-bottom: 18px;
+            color: var(--dark);
+        }
+
+        .testimonial-card blockquote {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .testimonial-source {
+            display: block;
+            text-align: center;
+            margin-top: 24px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 480px) {
+            .testimonial-card {
+                padding: 32px 24px;
+            }
+
+            .testimonial-card h3 {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* ─── Privacy ─── */
+        .privacy-highlight {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .privacy-card {
+            background: linear-gradient(145deg, rgb(51, 20, 31), rgb(26, 10, 15));
+            border-radius: 32px;
+            padding: 60px 40px;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .privacy-card.revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        /* Sparkle dots */
+        .privacy-card::before,
+        .privacy-card::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--pink-mist);
+            opacity: 0.4;
+        }
+
+        .privacy-card::before {
+            top: 30px;
+            right: 40px;
+            box-shadow:
+                20px 15px 0 rgba(135, 222, 234, 0.3),
+                -30px 50px 0 rgba(244, 156, 187, 0.25),
+                60px 60px 0 rgba(242, 106, 141, 0.2),
+                -10px 80px 0 rgba(135, 222, 234, 0.15),
+                40px 100px 0 rgba(244, 156, 187, 0.2);
+        }
+
+        .privacy-card::after {
+            bottom: 30px;
+            left: 40px;
+            box-shadow:
+                -20px -15px 0 rgba(135, 222, 234, 0.25),
+                30px -50px 0 rgba(244, 156, 187, 0.2),
+                -60px -30px 0 rgba(242, 106, 141, 0.15),
+                10px -80px 0 rgba(135, 222, 234, 0.2),
+                -40px -100px 0 rgba(244, 156, 187, 0.15);
+        }
+
+        .privacy-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(221, 45, 74, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .privacy-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .privacy-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .privacy-card p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .privacy-card a {
+            color: var(--pink-mist);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .privacy-card a:hover {
+            color: white;
+        }
+
+        /* ─── Download CTA ─── */
+        .download-cta {
+            padding: 40px 0 100px;
+            text-align: center;
+        }
+
+        .download-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .download-cta h2 em {
+            font-style: italic;
+            background: linear-gradient(135deg, var(--coral), var(--bubblegum));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .download-cta p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 480px;
+            margin: 0 auto 32px;
+        }
+
+        .download-cta .store-badges {
+            justify-content: center;
+        }
+
+        .download-cta-inner {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .download-cta-inner.revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        /* ─── Footer ─── */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(221, 45, 74, 0.08);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .footer-brand img {
+            width: 28px;
+            height: 28px;
+            border-radius: 7px;
+        }
+
+        .footer-brand span {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--dark);
+            opacity: 0.85;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--coral);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* ─── Responsive ─── */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 130px 0 60px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .store-badges {
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+
+            .hamburger {
+                display: inline-flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                height: 100dvh;
+                width: min(80vw, 320px);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+                padding: 96px 28px 32px;
+                margin: 0;
+                background: rgba(255, 249, 247, 0.98);
+                backdrop-filter: saturate(180%) blur(20px);
+                -webkit-backdrop-filter: saturate(180%) blur(20px);
+                box-shadow: -8px 0 32px rgba(136, 13, 30, 0.08);
+                transform: translateX(100%);
+                visibility: hidden;
+                transition: transform 0.3s ease, visibility 0s linear 0.3s;
+                z-index: 100;
+            }
+
+            .nav-links.open {
+                transform: translateX(0);
+                visibility: visible;
+                transition: transform 0.3s ease;
+            }
+
+            .nav-links a {
+                font-size: 1.1rem;
+                padding: 12px 4px;
+                opacity: 0.9;
+            }
+
+            .nav-links .nav-cta {
+                margin-top: 12px;
+                text-align: center;
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+
+            body.menu-open {
+                overflow: hidden;
+            }
+
+            .menu-backdrop {
+                position: fixed;
+                inset: 0;
+                background: rgba(43, 27, 31, 0.35);
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s ease;
+                z-index: 99;
+            }
+
+            .menu-backdrop.visible {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .features h2,
+            .how-it-works h2,
+            .walkthrough h2 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .phone-frame {
+                width: 240px;
+                height: 490px;
+            }
+
+            .steps-connector {
+                display: none;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .string-svg {
+                width: 350px;
+                height: 200px;
+                left: -20px;
+                top: -20px;
+            }
+
+            .romantic-quote blockquote {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .phone-frame {
+                width: 200px;
+                height: 410px;
+            }
+
+            .features h2,
+            .how-it-works h2,
+            .walkthrough h2 {
+                font-size: 1.7rem;
+            }
+
+            .romantic-quote blockquote {
+                font-size: 1.1rem;
+                padding: 0 10px;
+            }
+
+            .privacy-card {
+                padding: 40px 24px;
+            }
+
+            .privacy-card h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* ─── Reduced Motion ─── */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .feature-card,
+            .step,
+            .romantic-quote blockquote,
+            .testimonial-card,
+            .video-frame,
+            .privacy-card,
+            .download-cta-inner {
+                opacity: 1;
+                transform: none;
+            }
+
+            .string-path,
+            .string-path-2 {
+                stroke-dashoffset: 0;
+            }
+
+            .string-heart {
+                opacity: 1;
+            }
+        }
+    </style>
+    <noscript>
+        <style>
+            [data-reveal] {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+    <!-- Page view analytics (TelemetryDeck, no cookies) -->
+    <script src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js" data-app-id="FE3F4589-1E31-4BCF-A4CA-4C0FED8EB4B2"></script>
+</head>
+<body>
+    <!-- Background circles -->
+    <div class="bg-circle bg-circle-1" aria-hidden="true"></div>
+    <div class="bg-circle bg-circle-2" aria-hidden="true"></div>
+    <div class="bg-circle bg-circle-3" aria-hidden="true"></div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="./" class="logo">
+                    <img class="logo-icon" src="app-icon.png" alt="" width="40" height="40" />
+                    <span class="logo-text">Invisible String</span>
+                </a>
+                <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+                    <span class="hamburger-box" aria-hidden="true">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </span>
+                </button>
+                <ul class="nav-links" id="primary-nav">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="#download" class="nav-cta">Download</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="menu-backdrop" aria-hidden="true"></div>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <!-- Invisible string SVG -->
+                <svg class="string-svg" viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path class="string-path" d="M20 250 C80 250, 100 50, 200 100 C300 150, 280 30, 350 60" stroke="var(--pink-mist)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <path class="string-path-2" d="M480 230 C420 230, 400 80, 300 110 C250 130, 310 40, 350 60" stroke="var(--light-cyan)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <g class="string-heart" transform="translate(338, 44)">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="var(--coral)" opacity="0.9"/>
+                    </g>
+                </svg>
+
+                <!-- Floating hearts -->
+                <div class="floating-hearts" aria-hidden="true">
+                    <span class="float-heart" style="left:8%; font-size:18px; color:var(--pink-mist); animation-duration:7s; animation-delay:0s;">&#9829;</span>
+                    <span class="float-heart" style="left:25%; font-size:12px; color:var(--light-cyan); animation-duration:9s; animation-delay:1.5s;">&#9829;</span>
+                    <span class="float-heart" style="left:45%; font-size:22px; color:var(--coral); animation-duration:8s; animation-delay:0.8s;">&#9829;</span>
+                    <span class="float-heart" style="left:65%; font-size:14px; color:var(--bubblegum); animation-duration:10s; animation-delay:2.2s;">&#9829;</span>
+                    <span class="float-heart" style="left:80%; font-size:16px; color:var(--pink-mist); animation-duration:7.5s; animation-delay:3s;">&#9829;</span>
+                    <span class="float-heart" style="left:92%; font-size:10px; color:var(--light-cyan); animation-duration:11s; animation-delay:0.5s;">&#9829;</span>
+                </div>
+
+                <div class="hero-grid">
+                    <div class="hero-text">
+                        <div class="hero-badge"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> Loved on the App Store</div>
+                        <h1>Discover the moments <em>you almost met</em></h1>
+                        <p>Were you at the same coffee shop? The same concert? The same street corner? Invisible String reveals the beautiful near-misses in your love story.</p>
+                        <div class="store-badges">
+                            <a href="https://apps.apple.com/us/app/invisible-string/id6757892661" class="app-store-badge">
+                                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.invisiblestring&pcampaignid=web_share" class="app-store-badge google-play-badge">
+                                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-phone">
+                        <div class="phone-frame">
+                            <div class="phone-screen">
+                                <picture>
+                                    <source srcset="screenshot.webp" type="image/webp">
+                                    <img src="screenshot.png" alt="Invisible String app showing a chance encounter in Times Square" width="554" height="1200" fetchpriority="high">
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="container">
+                <span class="section-eyebrow">Features</span>
+                <h2>Your story, beautifully told</h2>
+                <p class="section-sub">Every couple has near-misses they never knew about. Invisible String finds them and turns them into something you can keep.</p>
+                <div class="features-grid">
+                    <div class="feature-card accent-cyan" data-reveal data-delay="0">
+                        <div class="feature-icon-wrap">
+                            <div class="feature-icon" aria-hidden="true">&#128205;</div>
+                        </div>
+                        <h3>Find Near-Misses</h3>
+                        <p>Scan your photo libraries to find the times you were in the same place, your closest-ever moments, and photos you took at the same moment before you met.</p>
+                    </div>
+                    <div class="feature-card accent-bubblegum" data-reveal data-delay="120">
+                        <div class="feature-icon-wrap">
+                            <div class="feature-icon" aria-hidden="true">&#128240;</div>
+                        </div>
+                        <h3>Share Your Story</h3>
+                        <p>Create beautiful story cards showing your near-miss moments. Perfect for sharing your unique love story.</p>
+                    </div>
+                    <div class="feature-card accent-coral" data-reveal data-delay="240">
+                        <div class="feature-icon-wrap">
+                            <div class="feature-icon" aria-hidden="true">&#128274;</div>
+                        </div>
+                        <h3>Privacy First</h3>
+                        <p>Matching uses only the dates and places saved with your photos, and it all happens on your phone. Your photos never go to a server.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="romantic-quote">
+            <div class="container">
+                <blockquote data-reveal>The distance between you was shrinking long before you knew each other's names</blockquote>
+            </div>
+        </section>
+
+        <section class="how-it-works" id="how-it-works">
+            <div class="container">
+                <span class="section-eyebrow">Simple by design</span>
+                <h2>How it works</h2>
+                <p class="section-sub">No accounts and no photo uploads. Just you, your partner, and your photo libraries.</p>
+                <div class="steps-wrapper">
+                    <!-- SVG dashed string connector -->
+                    <svg class="steps-connector" viewBox="0 0 800 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M0 30 C100 10, 200 50, 300 30 C400 10, 500 50, 600 30 C700 10, 800 40, 800 30" stroke="var(--pink-mist)" stroke-width="2" stroke-dasharray="8 6" opacity="0.4" fill="none"/>
+                    </svg>
+                    <div class="steps">
+                        <div class="step" data-reveal data-delay="0">
+                            <div class="step-number">1</div>
+                            <h3>Scan</h3>
+                            <p>The app reads the date and place saved with each photo, right on your phone.</p>
+                        </div>
+                        <div class="step" data-reveal data-delay="100">
+                            <div class="step-number">2</div>
+                            <h3>Connect</h3>
+                            <p>Pair with your partner using a simple code. No accounts needed.</p>
+                        </div>
+                        <div class="step" data-reveal data-delay="200">
+                            <div class="step-number">3</div>
+                            <h3>Discover</h3>
+                            <p>See the moments your paths crossed before you knew each other.</p>
+                        </div>
+                        <div class="step" data-reveal data-delay="300">
+                            <div class="step-number">4</div>
+                            <h3>Share</h3>
+                            <p>Create and share beautiful story cards of your invisible string.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="walkthrough" id="walkthrough">
+            <div class="container">
+                <span class="section-eyebrow">See it in action</span>
+                <h2>Watch the walkthrough</h2>
+                <p class="section-sub">Follow along as the app scans, pairs, and uncovers the moments two paths crossed.</p>
+                <div class="video-frame" data-reveal>
+                    <iframe src="https://www.youtube-nocookie.com/embed/7BT-q7AFjG8?start=137&amp;rel=0" title="Invisible String App Walkthrough" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <span class="section-eyebrow">Loved on the App Store</span>
+                <h2>What people are saying</h2>
+                <div class="testimonial-card" data-reveal>
+                    <div class="testimonial-header">
+                        <div class="testimonial-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="testimonial-meta">
+                            <strong>Anonymous</strong>
+                            Mar 31
+                        </div>
+                    </div>
+                    <h3>All the coincidences you might otherwise never know about!</h3>
+                    <blockquote>This app is such a great idea and fun experience. There are so many stories we forget to tell when getting to know someone and this really bridges the gap for those &ldquo;oh, you&rsquo;ve been there too?!&rdquo; conversations. Also loved the feature to view photos taken at the same time; was very cool to see back three years before we&rsquo;d met that while I was trying a new recipe, they were at a museum, or that we both took a photo of the same sunset just 500 miles apart. Would recommend this app!</blockquote>
+                    <span class="testimonial-source">App Store review</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="privacy-highlight">
+            <div class="container">
+                <div class="privacy-card" data-reveal>
+                    <div class="privacy-glow" aria-hidden="true"></div>
+                    <div class="privacy-content">
+                        <h2>Your story stays between you two</h2>
+                        <p>Matching happens on your phone, and your photos never touch our servers. When you pair with a code, your photo locations are encrypted before they leave your phone, and the copy on our relay expires after 12 hours. There are no accounts to create and no ads.</p>
+                        <a href="privacy.html">Read our privacy policy &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="download-cta" id="download">
+            <div class="container">
+                <div class="download-cta-inner" data-reveal>
+                    <h2>Start following <em>your string</em></h2>
+                    <p>Free to download, with an optional one-time unlock. Pair with your partner in seconds and see where your paths crossed.</p>
+                    <div class="store-badges">
+                        <a href="https://apps.apple.com/us/app/invisible-string/id6757892661" class="app-store-badge">
+                            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.invisiblestring&pcampaignid=web_share" class="app-store-badge google-play-badge">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="./" class="footer-brand">
+                    <img src="app-icon.png" alt="" />
+                    <span>Invisible String</span>
+                </a>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="mailto:support@invisiblestringapp.com">Contact</a></li>
+                    <li><a href="https://kismetlab.io/" target="_blank" rel="noopener">Kismet Lab</a></li>
+                </ul>
+                <p class="copyright">&copy; 2026 Invisible String. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal with IntersectionObserver
+        const revealElements = document.querySelectorAll('[data-reveal]');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = parseInt(entry.target.dataset.delay) || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('revealed');
+                    }, delay);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Header scroll state
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.pageYOffset > 50);
+        }, { passive: true });
+
+        // Mobile hamburger menu
+        (function () {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const backdrop = document.querySelector('.menu-backdrop');
+            if (!hamburger || !navLinks) return;
+
+            const isOpen = () => hamburger.getAttribute('aria-expanded') === 'true';
+
+            const setOpen = (open, { returnFocus = false } = {}) => {
+                hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+                navLinks.classList.toggle('open', open);
+                backdrop.classList.toggle('visible', open);
+                document.body.classList.toggle('menu-open', open);
+                if (open) {
+                    navLinks.querySelector('a').focus();
+                } else if (returnFocus) {
+                    hamburger.focus();
+                }
+            };
+
+            hamburger.addEventListener('click', () => {
+                setOpen(!isOpen());
+            });
+
+            backdrop.addEventListener('click', () => setOpen(false, { returnFocus: true }));
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => setOpen(false));
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && isOpen()) setOpen(false, { returnFocus: true });
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && isOpen()) setOpen(false);
+            });
+        })();
+    </script>
+</body>
+</html>
