@@ -1681,5 +1681,36 @@
             });
         })();
     </script>
+    <script>
+    // Count clicks on the App Store and Google Play buttons. Each click is sent to
+    // TelemetryDeck as a view of /click/app-store or /click/google-play, through the same
+    // endpoint the page-view script in <head> uses. Campaign tags on the page address are
+    // kept, so a click can be traced to the link that brought the visitor here.
+    (function () {
+        var APP_ID = "FE3F4589-1E31-4BCF-A4CA-4C0FED8EB4B2";
+        var isLocal = /^localhost$|^127(\.\d+){0,2}\.\d+$|^\[::1?]$/.test(location.hostname) || location.protocol === "file:";
+        document.addEventListener("click", function (event) {
+            var link = event.target.closest && event.target.closest('a[href*="apps.apple.com"], a[href*="play.google.com"]');
+            if (!link) return;
+            var store = link.href.indexOf("apps.apple.com") !== -1 ? "app-store" : "google-play";
+            var view = {
+                appID: APP_ID,
+                url: location.origin + "/click/" + store + location.search,
+                referrer: document.referrer,
+                telemetryClientVersion: "WebSDK 1.1.0",
+                locale: navigator.language
+            };
+            if (isLocal) view.isTestMode = true;
+            try {
+                // keepalive lets the request finish even though the browser is leaving the page
+                fetch("https://nom.telemetrydeck.com/v2/w/", {
+                    method: "POST", mode: "cors", keepalive: true,
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(view)
+                }).catch(function () {});
+            } catch (err) {}
+        }, true);
+    })();
+    </script>
 </body>
 </html>
