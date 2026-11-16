@@ -15,197 +15,29 @@
     <meta property="og:image" content="https://invisiblestringapp.com/og-image.png">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <style>
-        :root {
-            --raspberry: #dd2d4a;
-            --bubblegum: #f26a8d;
-            --crushed-berry: #880d1e;
-            --pink-mist: #f49cbb;
-            --light-cyan: #87DEEA;
-            --dark: #1f2937;
-        }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap" rel="stylesheet">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: #f9fafb;
-            color: var(--dark);
-            line-height: 1.7;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        header {
-            background: white;
-            border-bottom: 1px solid #e5e7eb;
-            padding: 20px 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: var(--dark);
-        }
-
-        .logo-icon {
-            width: 32px;
-            height: 32px;
-        }
-
-        .logo-text {
-            font-size: 1.25rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--raspberry), var(--bubblegum));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        main {
-            padding: 60px 0;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, var(--raspberry), var(--bubblegum));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .last-updated {
-            color: #6b7280;
-            margin-bottom: 40px;
-        }
-
-        .content {
-            background: white;
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            margin-top: 32px;
-            margin-bottom: 16px;
-            color: var(--dark);
-        }
-
-        h2:first-child {
-            margin-top: 0;
-        }
-
-        p {
-            margin-bottom: 16px;
-            color: #374151;
-        }
-
-        ul, ol {
-            margin-bottom: 16px;
-            padding-left: 24px;
-        }
-
-        li {
-            margin-bottom: 8px;
-            color: #374151;
-        }
-
-        strong {
-            color: var(--dark);
-        }
-
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(221, 45, 74, 0.1), rgba(242, 106, 141, 0.1));
-            border-left: 4px solid var(--raspberry);
-            padding: 16px 20px;
-            border-radius: 0 8px 8px 0;
-            margin: 24px 0;
-        }
-
-        .highlight-box p {
-            margin: 0;
-            font-weight: 500;
-        }
-
-        .table-scroll {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 24px 0;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        th {
-            background: #f9fafb;
-            font-weight: 600;
-        }
-
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            color: #6b7280;
-            font-size: 0.875rem;
-        }
-
-        footer a {
-            color: var(--raspberry);
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            .content {
-                padding: 24px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <!-- Page view analytics (TelemetryDeck, no cookies) -->
     <script src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js" data-app-id="FE3F4589-1E31-4BCF-A4CA-4C0FED8EB4B2"></script>
 </head>
 <body>
-    <header>
+    <header class="site-header scrolled">
         <div class="container">
-            <a href="./" class="logo">
-                <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#dd2d4a"/>
-                            <stop offset="100%" style="stop-color:#f26a8d"/>
-                        </linearGradient>
-                    </defs>
-                    <path d="M50 88C50 88 15 60 15 38C15 24 26 15 38 15C44 15 50 20 50 20C50 20 56 15 62 15C74 15 85 24 85 38C85 60 50 88 50 88Z" fill="url(#heartGradient)"/>
-                    <path d="M30 45C30 45 45 45 70 45" stroke="white" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 6"/>
-                </svg>
-                <span class="logo-text">Invisible String</span>
-            </a>
+            <nav>
+                <a href="./" class="logo">
+                    <img class="logo-icon" src="app-icon.png" alt="" width="36" height="36">
+                    <span class="logo-text">Invisible String</span>
+                </a>
+                <a href="./#download" class="btn-pill">Get the app</a>
+            </nav>
         </div>
     </header>
 
-    <main>
+    <main class="legal-main">
         <div class="container">
             <h1>Privacy Policy</h1>
             <p class="last-updated">Last Updated: October 12, 2026</p>
@@ -448,9 +280,21 @@
         </div>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <p><a href="./">Home</a> &middot; <a href="terms.html">Terms of Service</a> &middot; &copy; 2026 Invisible String</p>
+            <div class="footer-content">
+                <a href="./" class="footer-brand">
+                    <img src="app-icon.png" alt="" width="28" height="28">
+                    <span>Invisible String</span>
+                </a>
+                <ul class="footer-links">
+                    <li><a href="./">Home</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="mailto:support@invisiblestringapp.com">Contact</a></li>
+                    <li><a href="https://kismetlab.io/" target="_blank" rel="noopener">Kismet Lab</a></li>
+                </ul>
+                <p class="copyright">&copy; 2026 Invisible String. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 </body>
